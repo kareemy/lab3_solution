@@ -1,0 +1,14 @@
+@page
+@model TimeModel
+
+<div class="text-center">
+  <p>Time: @DateTime.Now</p>
+  <p>Message: @Model.Message</p>
+    <p>Lucky Numbers: 
+    <!-- Challenge part: foreach loop in Razor Page -->
+    @foreach(var x in Model.LuckyNumbers)
+    {
+    <span>@x </span>
+    }
+    </p>
+</div>

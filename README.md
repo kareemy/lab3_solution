@@ -1,4 +1,4 @@
-## Your Name:
+## Your Name: LAB 3 SOLUTION
 
 
 # CIDM 3312 Lab 3: Middleware, Razor Pages, and Logging
@@ -34,7 +34,7 @@
    
 6. Visit the website. What do you see? Why?
    
-   **Replace this text with your response.**
+   **You see nothing. This is because we removed all the middleware so no HTTP requests can be processed.**
    
 ## Task 1: Add Some Middleware
 1. In `Program.cs` where you deleted the HTTP request pipeline, add the following piece of middleware (After `var app = builder.Build();` and before `app.Run()`): 
@@ -44,7 +44,7 @@
 
 2. Run your project and visit the site in a web browser. What happens? Why?
 
-    **Replace this text with your response.**
+    **A welcome page is shown. This is because we are using the WelcomePage middleware and it is processing all HTTP requests.**
    
 ## Task 2: Serve Some Static Files
 1. Create `example.html` in the `wwwroot` folder. Write some simple html for this page.
@@ -55,7 +55,7 @@
 
 4. Why is the welcome page still showing?
 
-    **Replace this text with your response.**
+    **Because the ORDER of middleware matters. The Welcome Page is first, it is processing the HTTP request and does not pass it off to UseStaticFiles().**
 
 5. Alter your code so that the content from `example.html` displays when you navigate to it and run your project again. The Welcome Page should still display for all other requests.
 
@@ -129,5 +129,3 @@
  3. Razor Pages can really run most C# code. Write C# code in `Time.cshtml` to loop through every element of the list and display them with HTML. Use the `@` symbol to start your C# code. Good luck!
  
  4. Submit your assignment to GitHub.
-  
-  
